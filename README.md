@@ -2,7 +2,7 @@
 
 A Micro.blog plugin that changes the photos page to a "grid" or "masonry" style.
 
-![Screenshot of the "grid" style](./docs/screenshot-grid.png)
+![Screenshot of the "grid" style](https://github.com/kottkrig/microdotblog-photos-page/blob/main/docs/screenshot-grid.png)
 
 ## Customize
 
@@ -12,8 +12,8 @@ This plugin supports two types of layouts. The currently used layout can be set,
 
 The "grid" style uses a fixed height images in a row. The images wil be slightly cropped in order to flex out on the row.
 
-![Screenshot of the "grid" style](./docs/screenshot-grid.png)
+![Screenshot of the "grid" style](https://github.com/kottkrig/microdotblog-photos-page/blob/main/docs/screenshot-grid.png)
 
 ### Masonry:
 
-![Screenshot of the "masonry" style](./docs/screenshot-masonry.png)
+![Screenshot of the "masonry" style](https://github.com/kottkrig/microdotblog-photos-page/blob/main/docs/screenshot-masonry.png)
