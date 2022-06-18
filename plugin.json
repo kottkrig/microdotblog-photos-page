@@ -5,12 +5,6 @@
   "includes": ["/css/photos-grid.css"],
   "fields": [
     {
-      "field": "params.photo_grid_style",
-      "label": "Grid style \"grid\" or \"masonry\"",
-      "placeholder": "Enter the grid style",
-      "type": "string"
-    },
-    {
       "field": "params.all_photos",
       "label": "Include all photos in multi-photo posts, not just first photo.",
       "type": "boolean"
