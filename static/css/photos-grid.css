@@ -13,7 +13,6 @@ Override max-width of common micro.blog #wrapper.
 
 .photos-grid--style-grid .photos-grid__item {
   display: block;
-  height: 40vh;
   width: auto;
   flex-grow: 1;
   position: relative;
@@ -27,6 +26,10 @@ Override max-width of common micro.blog #wrapper.
 }
 
 @media only screen and (min-width: 400px) {
+  .photos-grid--style-grid .photos-grid__item {
+    height: 40vh;
+  }
+
   .photos-grid--style-grid .photos-grid__item img {
     width: auto;
     height: 100%;
