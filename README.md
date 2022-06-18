@@ -6,7 +6,7 @@ A Micro.blog plugin that changes the photos page to a "grid" or "masonry" style.
 
 ## Customize
 
-This plugin supports two types of layouts. The currently used layout can be set, by you, in the Micro.blog plugin settings. The layouts are "grid" and "masonry".
+This plugin supports two types of layouts. The currently used layout can be set, by you, in the Micro.blog plugin settings. The layout options are "grid" and "masonry".
 
 ### Grid:
 
