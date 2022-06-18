@@ -1,19 +1,24 @@
 {{ define "main" }}
   {{- $should_show_all_photos := $.Site.Params.show_all_photos -}}
+  {{- $photos_grid_style := $.Site.Params.photos_grid_style -}}
+  {{- $masonry_columns_count := 3 }}
 
+  {{ $photos := slice }}
 
-  <link rel="stylesheet" href="/css/photos-grid.css" />
+  {{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
+  {{ range $index, $value := $list }}
+    {{- $post_url := .Permalink -}}
+    {{- $post_photos := cond $should_show_all_photos .Params.photos_with_metadata (first 1 .Params.photos_with_metadata) -}}
+    {{ range $post_photo := $post_photos }}
+      {{- $photo_with_post_url := merge $post_photo (dict "post_url" $post_url) -}}
+      {{- $photos = $photos | append $photo_with_post_url -}}
+    {{ end }}
+  {{ end }}
 
-  <div class="photos-grid photos-grid--style-grid">
-    {{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
-    {{- $len := (len
-      $list)
-    -}}
-    {{ range $index, $value := $list }}
-      {{- $post_url := .Permalink -}}
-      {{- $photos := cond $should_show_all_photos .Params.photos_with_metadata (first 1 .Params.photos_with_metadata) -}}
+  {{ if (eq $photos_grid_style "grid") }}
+    <div class="photos-grid photos-grid--style-grid">
       {{ range $photos }}
-        <a href="{{ $post_url }}" class="photos-grid__item">
+        <a href="{{ .post_url }}" class="photos-grid__item">
           <img
             src="{{ .url }}"
             width="{{ .width }}"
@@ -23,6 +28,15 @@
           />
         </a>
       {{ end }}
-    {{ end }}
-  </div>
+    </div>
+  {{ else if (eq $photos_grid_style "masonry") }}
+
+    {{ partial "masonry.html" (dict "columns" 4 "photos" $photos "class" "photos-grid--visible-desktop") }}
+
+    {{ partial "masonry.html" (dict "columns" 2 "photos" $photos "class" "photos-grid--visible-mobile") }}
+
+  {{ else }}
+    <p>The grid style "{{ $photos_grid_style }}" is not supported.</p>
+  {{ end }}
+
 {{ end }}

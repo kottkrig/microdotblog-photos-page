@@ -1,5 +1,6 @@
 {
   "params": {
+    "photos_grid_style": "grid",
     "show_all_photos": false
   }
 }
