@@ -1,4 +1,7 @@
 {{ define "main" }}
+  {{- $should_show_all_photos = $.Site.Params.show_all_photos -}}
+
+
   <link rel="stylesheet" href="/css/photos-grid.css" />
 
   <div class="photos-grid photos-grid--style-grid">
@@ -7,16 +10,19 @@
       $list)
     -}}
     {{ range $index, $value := $list }}
-      <a href="{{ .Permalink }}" class="photos-grid__item">
-        {{ range first 1 .Params.photos_with_metadata }}
+      {{- $post_url := .Permalink -}}
+      {{- $photos := cond $should_show_all_photos .Params.photos_with_metadata (first 1 .Params.photos_with_metadata) -}}
+      {{ range $photos }}
+        <a href="{{ $post_url }}" class="photos-grid__item">
           <img
             src="{{ .url }}"
             width="{{ .width }}"
             height="{{ .height }}"
+            alt="{{ .alt }}"
             loading="lazy"
           />
-        {{ end }}
-      </a>
+        </a>
+      {{ end }}
     {{ end }}
   </div>
 {{ end }}

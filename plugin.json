@@ -5,7 +5,7 @@
   "includes": ["/css/photos-grid.css"],
   "fields": [
     {
-      "field": "params.all_photos",
+      "field": "params.show_all_photos",
       "label": "Include all photos in multi-photo posts, not just first photo.",
       "type": "boolean"
     }
