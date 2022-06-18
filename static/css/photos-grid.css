@@ -1,3 +1,10 @@
+/**
+Override max-width of common micro.blog #wrapper.
+**/
+#wrapper:has(> .photos-grid) {
+  max-width: 100%;
+}
+
 .photos-grid {
   display: flex;
   gap: 1rem;
