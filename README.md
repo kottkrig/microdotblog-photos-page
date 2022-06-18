@@ -10,6 +10,8 @@ This plugin supports two types of layouts. The currently used layout can be set,
 
 ### Grid:
 
+The "grid" style uses a fixed height images in a row. The images wil be slightly cropped in order to flex out on the row.
+
 ![Screenshot of the "grid" style](./docs/screenshot-grid.png)
 
 ### Masonry:
