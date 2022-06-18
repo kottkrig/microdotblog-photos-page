@@ -18,7 +18,7 @@
   object-fit: cover;
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 576px) {
   .photos-grid--style-grid .photos-grid__item {
     height: 40vh;
   }
