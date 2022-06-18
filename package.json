@@ -1,0 +1,23 @@
+{
+  "name": "microdotblog-photos-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://kottkrig@github.com/kottkrig/microdotblog-photos-page.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kottkrig/microdotblog-photos-page/issues"
+  },
+  "homepage": "https://github.com/kottkrig/microdotblog-photos-page#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-go-template": "^0.0.13"
+  }
+}

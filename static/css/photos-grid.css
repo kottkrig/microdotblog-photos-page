@@ -1,0 +1,27 @@
+.photos-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.photos-grid--style-grid .photos-grid__item {
+  display: block;
+  height: 40vh;
+  width: auto;
+  flex-grow: 1;
+  position: relative;
+}
+
+.photos-grid--style-grid .photos-grid__item img {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 400px) {
+  .photos-grid--style-grid .photos-grid__item img {
+    width: auto;
+    height: 100%;
+  }
+}

@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <link rel="stylesheet" href="/css/photos-grid.css" />
+
+  <div class="photos-grid photos-grid--style-grid">
+    {{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
+    {{- $len := (len
+      $list)
+    -}}
+    {{ range $index, $value := $list }}
+      <a href="{{ .Permalink }}" class="photos-grid__item">
+        {{ range first 1 .Params.photos_with_metadata }}
+          <img
+            src="{{ .url }}"
+            width="{{ .width }}"
+            height="{{ .height }}"
+            loading="lazy"
+          />
+        {{ end }}
+      </a>
+    {{ end }}
+  </div>
+{{ end }}
