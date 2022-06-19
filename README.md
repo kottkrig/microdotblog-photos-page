@@ -1,8 +1,14 @@
-# Kottkrig's photos page for Micro.blog
+# 📸 Photos page for Micro.blog
 
-A Micro.blog plugin that changes the photos page to a "grid" or "masonry" style.
+A Micro.blog plugin that changes the photos page to a "flexible grid" or "masonry" style.
 
 ![Screenshot of the "grid" style](https://raw.githubusercontent.com/kottkrig/microdotblog-photos-page/main/docs/screenshot-grid.png)
+
+## Features
+
+- 🛠 Customizable via plug-in settings.
+- ◽️ Select between two layouts, "grid" and "masonry"
+- 🎞 An option to list all post photos on the photos page, not just the first one.
 
 ## Customize
 

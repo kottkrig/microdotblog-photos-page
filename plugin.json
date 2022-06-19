@@ -1,7 +1,7 @@
 {
   "version": "1.0.1",
-  "title": "Photos grid",
-  "description": "Change the photos page to use a grid or masonry style.",
+  "title": "Photos page",
+  "description": "Change the photos page to use a \"flexible grid\" or \"masonry\" style.",
   "includes": ["/css/photos-grid.css"],
   "fields": [
     {
