@@ -16,7 +16,7 @@
       {{ range where $photos_with_columns "column_index" $column_index }}
         <a href="{{ .post_url }}" class="photos-grid__item">
           <img
-            src="{{ .url }}"
+            src="https://micro.blog/photos/600x/{{ .url }}"
             width="{{ .width }}"
             height="{{ .height }}"
             alt="{{ .alt }}"
