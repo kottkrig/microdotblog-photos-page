@@ -17,10 +17,12 @@ This plugin supports two types of layouts. The currently used layout can be set,
 
 ### Grid:
 
-The "grid" style uses a fixed height images in a row. The images wil be slightly cropped in order to flex out on the row.
+The "grid" style uses a fixed height images in a row. The images will be slightly cropped in order to flex out on the row.
 
 ![Screenshot of the "grid" style](https://raw.githubusercontent.com/kottkrig/microdotblog-photos-page/main/docs/screenshot-grid.png)
 
 ### Masonry:
+
+The "masonry" layout instead maintains the aspect ratio of each photo so that the rows are pleasantly uneven.
 
 ![Screenshot of the "masonry" style](https://raw.githubusercontent.com/kottkrig/microdotblog-photos-page/main/docs/screenshot-masonry.png)
