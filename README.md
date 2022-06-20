@@ -9,6 +9,7 @@ A Micro.blog plugin that changes the photos page to a "flexible grid" or "masonr
 - 🛠 Customizable via plug-in settings.
 - ◽️ Select between two layouts, "grid" and "masonry"
 - 🎞 An option to list all post photos on the photos page, not just the first one.
+- 🪣 An option to only include photos from posts in certain categories
 
 ## Customize
 
