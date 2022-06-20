@@ -5,7 +5,26 @@
 
   {{ $photos := slice }}
 
-  {{- $list := where .Site.Pages ".Params.photos" "!=" nil -}}
+  {{/* The default behaviour is to use photos from all pages,
+    so we set the intial value of our $pages array.
+  */}}
+
+  {{ $pages := .Site.Pages }}
+
+  {{ if (ne .Site.Params.included_categories "") }}
+    {{/* If the user has updated the setting to only include
+      certain categories, we fetch the option, split the string and
+      trim whitespace from each category.
+    */}}
+
+    {{ $categories := (split .Site.Params.included_categories ",") }}
+    {{ $trimmed_categories := apply $categories "trim" "." " " }}
+    {{- $pages = where .Site.Pages ".Params.categories" "intersect" $trimmed_categories -}}
+  {{ end }}
+
+  {{/* We then proceed to list all the photos from the pages. */}}
+
+  {{- $list := where $pages ".Params.photos_with_metadata" "!=" nil -}}
   {{ range $index, $value := $list }}
     {{- $post_url := .Permalink -}}
     {{- $post_photos := cond $should_show_all_photos .Params.photos_with_metadata (first 1 .Params.photos_with_metadata) -}}
@@ -14,6 +33,10 @@
       {{- $photos = $photos | append $photo_with_post_url -}}
     {{ end }}
   {{ end }}
+
+  {{/* With the array of photos, we can now render them based on the
+    style the user has chosen.
+  */}}
 
   {{ if (eq $photos_grid_style "grid") }}
     <div class="photos-grid photos-grid--style-grid">
