@@ -18,6 +18,7 @@
     {
       "field": "params.included_categories",
       "label": "Optionally: Only include photos from posts with the following categories (leave empty to include all posts). Separate categories with comma (\",\") to include multiple categories.",
+      "placeholder": "Enter category names separated by comma",
       "type": "string"
     }
   ]
