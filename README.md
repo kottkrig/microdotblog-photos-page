@@ -13,15 +13,21 @@ A Micro.blog plugin that changes the photos page to a "flexible grid" or "masonr
 
 ## Customize
 
-This plugin supports two types of layouts. The currently used layout can be set, by you, in the Micro.blog plugin settings. The layout options are "grid" and "masonry".
+### Categories
 
-### Grid:
+Optionally, you can choose to only include photos from certain categories on the photos page. Enter the category names in the plug-in settings.
+
+### Layouts
+
+"Photos page" supports two types of layouts. You can switch between them in the Micro.blog plug-in settings. The options are "grid" and "masonry".
+
+#### Grid:
 
 The "grid" style uses a fixed height images in a row. The images will be slightly cropped in order to flex out on the row.
 
 ![Screenshot of the "grid" style](https://raw.githubusercontent.com/kottkrig/microdotblog-photos-page/main/docs/screenshot-grid.webp)
 
-### Masonry:
+#### Masonry:
 
 The "masonry" layout instead maintains the aspect ratio of each photo so that the rows are pleasantly uneven.
 
