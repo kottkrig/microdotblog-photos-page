@@ -1,3 +1,12 @@
+.photos-grid * {
+  box-sizing: border-box;
+}
+
+.photos-grid *:before,
+.photos-grid *:after {
+  box-sizing: inherit;
+}
+
 .photos-grid {
   display: flex;
   gap: 1rem;
@@ -25,7 +34,14 @@
 Masonry:
 **/
 
-.photos-grid--visible-desktop {
+.photos-grid.photos-grid--style-masonry {
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+.photos-grid.photos-grid--visible-desktop {
   display: none;
 }
 
@@ -50,11 +66,11 @@ Masonry:
     height: 100%;
   }
 
-  .photos-grid--visible-desktop {
-    display: flex;
+  .photos-grid.photos-grid--visible-desktop {
+    display: grid;
   }
 
-  .photos-grid--visible-mobile {
+  .photos-grid.photos-grid--visible-mobile {
     display: none;
   }
 }
