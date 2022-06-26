@@ -1,5 +1,5 @@
 {
-  "version": "1.2.2",
+  "version": "1.2.3",
   "title": "Photos page",
   "description": "Change the photos page to use a \"flexible grid\" or \"masonry\" style.",
   "includes": ["/css/photos-grid.css"],
