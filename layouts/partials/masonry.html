@@ -1,4 +1,5 @@
 {{- $masonry_columns_count := .columns }}
+{{- $photos_above_the_fold_count := mul $masonry_columns_count 3 }}
 
 {{- $column_indexes := slice -}}
 {{- $photos_with_columns := slice -}}
@@ -6,7 +7,7 @@
 {{ range $photo_index, $photo := .photos }}
   {{- $column_index := mod $photo_index $masonry_columns_count -}}
   {{- $column_indexes = $column_indexes | append $column_index -}}
-  {{- $photos_with_columns = $photos_with_columns | append (merge $photo (dict "column_index" $column_index)) -}}
+  {{- $photos_with_columns = $photos_with_columns | append (merge $photo (dict "column_index" $column_index "is_above_fold" (lt $photo_index $photos_above_the_fold_count))) -}}
 {{ end }}
 
 
@@ -20,7 +21,7 @@
             width="{{ .width }}"
             height="{{ .height }}"
             alt="{{ .alt }}"
-            loading="lazy"
+            loading="{{ cond .is_above_fold "eager" "lazy" }}"
           />
         </a>
       {{ end }}
