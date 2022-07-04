@@ -13,13 +13,8 @@
 }
 
 .photos-grid img {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-@media (prefers-color-scheme: dark) {
-  .photos-grid img {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+  backdrop-filter: invert(5%);
+  -webkit-backdrop-filter: invert(5%);
 }
 
 .photos-grid.photos-grid--style-grid {
