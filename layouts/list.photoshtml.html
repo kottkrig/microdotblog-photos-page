@@ -1,7 +1,8 @@
 {{ define "main" }}
   {{- $should_show_all_photos := $.Site.Params.show_all_photos -}}
   {{- $photos_grid_style := $.Site.Params.photos_grid_style -}}
-  {{- $masonry_columns_count := 3 }}
+  {{- $masonry_columns_count_large_screens := $.Site.Params.masonry_columns_large_screens | default 4 -}}
+  {{- $masonry_columns_count_small_screens := $.Site.Params.masonry_columns_small_screens | default 2 -}}
 
   {{ $photos := slice }}
 
@@ -54,9 +55,9 @@
     </div>
   {{ else if (eq $photos_grid_style "masonry") }}
 
-    {{ partial "masonry.html" (dict "columns" 4 "photos" $photos "class" "photos-grid--visible-desktop") }}
+    {{ partial "masonry.html" (dict "columns" $masonry_columns_count_large_screens "photos" $photos "class" "photos-grid--visible-desktop") }}
 
-    {{ partial "masonry.html" (dict "columns" 2 "photos" $photos "class" "photos-grid--visible-mobile") }}
+    {{ partial "masonry.html" (dict "columns" $masonry_columns_count_small_screens "photos" $photos "class" "photos-grid--visible-mobile") }}
 
   {{ else }}
     <p>The grid style "{{ $photos_grid_style }}" is not supported.</p>

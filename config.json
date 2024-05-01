@@ -1,6 +1,8 @@
 {
   "params": {
     "photos_grid_style": "grid",
-    "show_all_photos": false
+    "show_all_photos": false,
+    "masonry_columns_large_screens": 4,
+    "masonry_columns_small_screens": 2
   }
 }
