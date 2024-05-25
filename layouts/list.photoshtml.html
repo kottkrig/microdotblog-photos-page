@@ -41,14 +41,14 @@
 
   {{ if (eq $photos_grid_style "grid") }}
     <div class="photos-grid photos-grid--style-grid">
-      {{ range $photos }}
-        <a href="{{ .post_url }}" class="photos-grid__item">
+      {{ range $index, $photo := $photos }}
+        <a href="{{ $photo.post_url }}" class="photos-grid__item">
           <img
-            src="https://micro.blog/photos/1000x/{{ .url }}"
-            width="{{ .width }}"
-            height="{{ .height }}"
-            alt="{{ .alt }}"
-            loading="lazy"
+            src="{{ $photo.url }}"
+            width="{{ $photo.width }}"
+            height="{{ $photo.height }}"
+            alt="{{ $photo.alt }}"
+            loading="{{ cond (lt $index 10) "eager" "lazy" }}"
           />
         </a>
       {{ end }}

@@ -1,3 +1,7 @@
+:root {
+  --photos-grid-gap: 1rem;
+}
+
 .photos-grid * {
   box-sizing: border-box;
 }
@@ -9,12 +13,7 @@
 
 .photos-grid {
   display: flex;
-  gap: 1rem;
-}
-
-.photos-grid img {
-  backdrop-filter: invert(5%);
-  -webkit-backdrop-filter: invert(5%);
+  gap: var(--photos-grid-gap);
 }
 
 .photos-grid.photos-grid--style-grid {
@@ -23,16 +22,53 @@
 
 .photos-grid--style-grid .photos-grid__item {
   display: block;
-  width: auto;
-  flex-grow: 1;
   position: relative;
+  flex: auto;
+}
+
+.photos-grid--style-grid .photos-grid__item:last-child {
+  flex-grow: 10;
 }
 
 .photos-grid--style-grid .photos-grid__item img {
-  width: 100%;
+  height: 40vh;
+  width: auto;
   min-width: 100%;
-  min-height: 100%;
   object-fit: cover;
+}
+
+/* Tall screens */
+
+@media (max-aspect-ratio: 1/1) {
+  .photos-grid--style-grid .photos-grid__item img {
+    height: 30vh;
+  }
+}
+
+/* Short screens */
+
+@media (max-height: 480px) {
+  .photos-grid--style-grid .photos-grid__item img {
+    height: 80vh;
+  }
+}
+
+/* Smaller screens in portrait */
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .photos-grid--style-grid {
+    flex-direction: row;
+  }
+
+  .photos-grid--style-grid .photos-grid__item {
+    height: auto;
+    width: 100%;
+  }
+  .photos-grid--style-grid .photos-grid__item img {
+    width: 100%;
+    max-height: 75vh;
+    min-width: 0;
+  }
 }
 
 /**
@@ -41,7 +77,7 @@ Masonry:
 
 .photos-grid.photos-grid--style-masonry {
   display: grid;
-  gap: 1rem;
+  gap: var(--photos-grid-gap);
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
 }
@@ -53,7 +89,7 @@ Masonry:
 .photos-grid__column {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--photos-grid-gap);
 }
 
 .photos-grid--style-masonry .photos-grid__item img {
@@ -63,15 +99,6 @@ Masonry:
 }
 
 @media only screen and (min-width: 576px) {
-  .photos-grid--style-grid .photos-grid__item {
-    height: 40vh;
-  }
-
-  .photos-grid--style-grid .photos-grid__item img {
-    width: auto;
-    height: 100%;
-  }
-
   .photos-grid.photos-grid--visible-desktop {
     display: grid;
   }
